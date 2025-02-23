@@ -142,9 +142,9 @@ if dataframes:
             file_name = last_file_name.replace(os.path.splitext(last_file_name)[-1], ".xlsx")  
             mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"  
 
-        buffer.seek(0)  
+        buffer.seek(0)  # Reset buffer position  
 
-        Download button  
+        # Download button  
         st.download_button(  
             label=f"🔽 Download {file_name} as {conversion_type}",  
             data=buffer,  
@@ -152,4 +152,5 @@ if dataframes:
             mime=mime_type  
         )  
 
-st.success("✔ All files processed!")
+        # Success message after processing  
+        st.success("✔ All files processed!")
