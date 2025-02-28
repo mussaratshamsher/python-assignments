@@ -1,100 +1,186 @@
 import streamlit as st
 
-# Function to convert the input length into meters and centimeters
-def convert_length(length, unit):
-    if unit == 'Meter':
-        meters = length
-        centimeters = length * 100
-    elif unit == 'Centimeter':
-        meters = length / 100
-        centimeters = length
-    return meters, centimeters
+# Function to convert different units
+def convert_length(length, unit_from, unit_to):
+    if unit_from == 'Meter' and unit_to == 'Centimeter':
+        return length * 100
+    elif unit_from == 'Centimeter' and unit_to == 'Meter':
+        return length / 100
+    return None  # Return None if conversion is not possible
 
-# App layout
-st.set_page_config(page_title="Length Converter", page_icon="🌍", layout="centered")
+def convert_weight(weight, unit_from, unit_to):
+    if unit_from == 'Kilogram' and unit_to == 'Pound':
+        return weight * 2.20462
+    elif unit_from == 'Pound' and unit_to == 'Kilogram':
+        return weight / 2.20462
+    elif unit_from == 'Gram' and unit_to == 'Ounce':
+        return weight * 0.035274
+    elif unit_from == 'Ounce' and unit_to == 'Gram':
+        return weight / 0.035274
+    return None  # Return None if conversion is not possible
 
-# Dark Background with professional look
+def convert_temperature(temp, unit_from, unit_to):
+    if unit_from == 'Celsius' and unit_to == 'Fahrenheit':
+        return (temp * 9/5) + 32
+    elif unit_from == 'Fahrenheit' and unit_to == 'Celsius':
+        return (temp - 32) * 5/9
+    elif unit_from == 'Celsius' and unit_to == 'Kelvin':
+        return temp + 273.15
+    elif unit_from == 'Kelvin' and unit_to == 'Celsius':
+        return temp - 273.15
+    elif unit_from == 'Fahrenheit' and unit_to == 'Kelvin':
+        return (temp - 32) * 5/9 + 273.15
+    elif unit_from == 'Kelvin' and unit_to == 'Fahrenheit':
+        return (temp - 273.15) * 9/5 + 32
+    return None  # Return None if conversion is not possible
+
+# Set page configuration for the app
+st.set_page_config(page_title="Unit Converter", page_icon="💫", layout="wide")
+
+# Apply custom styling for the dark theme with attractive button and card colors
 st.markdown("""
     <style>
+        /* General body styling */
         body {
-            background-color: black !important;
+            background-color: #121212 !important;
             color: white !important;
             font-family: 'Roboto', sans-serif !important;
-            border: 1px solid #333 !important;
-            border-radius: 8px !important;
         }
-        .stTextInput, .stNumberInput, .stSelectbox, .stButton>button {
-            background-color: #6200ea !important;
+
+        /* Stylish button */
+        .stButton>button {
+            background: linear-gradient(145deg, #ff6a00, #ee0979) !important;
             color: white !important;
-            border-radius: 8px !important;
-            border: 1px solid #333 !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            padding: 14px 32px !important;
+            border-radius: 50px !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.3s ease !important;
+            margin-top: 20px !important;
+            cursor: pointer !important;
+            border: none !important;
+            outline: none !important;
+            transform: scale(1) !important;
+        }
+
+        /* Hover effect for button */
+        .stButton>button:hover {
+            background: linear-gradient(145deg, #ff416c, #ff4b2b) !important;
+            transform: scale(1.1) !important;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+
+        /* Focused state for button */
+        .stButton>button:focus {
+            box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.6) !important;
+        }
+
+        /* Active state for button (slightly shrunk on click) */
+        .stButton>button:active {
+            background: linear-gradient(145deg, #ff6a00, #ee0979) !important;
+            transform: scale(0.98) !important;
+        }
+
+        /* Stylish input fields */
+        .stSelectbox, .stNumberInput, .stTextInput {
+            background-color: #333333 !important;
+            color: white !important;
+            border: 2px solid #ff6a00 !important;
+            border-radius: 10px !important;
+            padding: 12px 15px !important;
             font-size: 16px !important;
         }
-        .stButton>button {
-            background-color: #6200ea !important;
-            color: white !important;
-            font-size: 18px !important;
-            font-weight: bold !important;
-            padding: 10px 20px !important;
-            border-radius: 10px !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
-            transition: all 0.3s ease !important;
+
+        /* Hover effect for input fields */
+        .stSelectbox:hover, .stNumberInput:hover, .stTextInput:hover {
+            border-color: #ee0979 !important;
         }
-        .stButton>button:hover {
-            background-color: #3700b3 !important;
-            transform: scale(1.05) !important;
-        }
-        .stContainer {
-            margin-bottom: 50px !important;           
-        }
+
+        /* Card background and styling */
         .stCard {
-            background-color: #1a1a1a !important;
-            border-radius: 15px !important;
-            padding: 20px !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            background-color: #1f1f1f !important;
+            border-radius: 20px !important;
+            padding: 20px 30px !important;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
         }
+
+        /* Card content styling */
+        .stCard h1, .stCard h2, .stCard h3 {
+            color: #ff6a00 !important;
+        }
+
+        /* Header and subheader color */
         .stTitle, .stSubheader {
-            color: #bb86fc !important;
+            color: #ff6a00 !important;
         }
-        .stMarkdown {
-            color: #bb86fc !important;
-        }
-        .stWrite {
-            color: #a5b3d1 !important;
+
+        /* Improve spacing and alignment */
+        .stTitle, .stSubheader, .stButton, .stCard {
+            margin-bottom: 20px !important;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# App header
-st.title("Length Converter")
-st.subheader("Convert between meters and centimeters")
+# App Title and Header
+st.title("📀⏳ Unit Converter 📀⏳")
+st.subheader("🔄🎨 Choose a converter and input your values")
 
-# Input form within a styled container
-with st.container():
-    # Create an expander for input fields
-    with st.expander("Enter Length Details", expanded=True):
-        # Create two columns for the inputs (input fields)
-        col1, col2 = st.columns([1, 1])
+# Sidebar menu with buttons for selecting the conversion type
+menu_option = st.sidebar.selectbox("Select Converter", ["Length", "Weight", "Temperature"])
 
-        # Input in the first column
-        with col1:
-            length = st.number_input("Enter Length", min_value=0.0, step=0.1)
-        
-        # Unit selector in the second column
-        with col2:
-            unit = st.selectbox("Select Unit", ["Meter", "Centimeter"])
+# Show content based on sidebar selection
+if menu_option == "Length":
+    # Length Conversion Interface
+    st.sidebar.subheader("Length Converter")
+    with st.sidebar.expander("Length Details", expanded=True):
+        length = st.number_input("Enter Length", min_value=0.0, step=0.1, format="%.2f")
+        unit_from = st.selectbox("From Unit", ["Meter", "Centimeter"])
+        unit_to = st.selectbox("To Unit", ["Meter", "Centimeter"])
 
-# Display the Convert button at the bottom center
-st.markdown('<div style="display: flex; justify-content: center; margin-top: 30px;">', unsafe_allow_html=True)
-convert_button = st.button("Convert", key="convert_button")
-st.markdown('</div>', unsafe_allow_html=True)
+    if st.sidebar.button("Convert Length"):
+        result = convert_length(length, unit_from, unit_to)
+        if result is not None:
+            with st.expander("Conversion Results", expanded=True):
+                st.markdown(f"### Results:")
+                st.write(f"- Input Length: **{length} {unit_from}**")
+                st.write(f"- Converted Length: **{result:.2f} {unit_to}**")
+        else:
+            st.error("Invalid unit combination for length conversion!")
 
-# If button is pressed, perform conversion
-if convert_button:
-    meters, centimeters = convert_length(length, unit)
-    
-    # Display results inside a card-like box
-    with st.expander("Conversion Results", expanded=True):
-        st.markdown(f"### Results:")
-        st.write(f"- Length in meters: **{meters:.2f} m**")
-        st.write(f"- Length in centimeters: **{centimeters:.2f} cm**")
+elif menu_option == "Weight":
+    # Weight Conversion Interface
+    st.sidebar.subheader("Weight Converter")
+    with st.sidebar.expander("Weight Details", expanded=True):
+        weight = st.number_input("Enter Weight", min_value=0.0, step=0.1, format="%.2f")
+        unit_from = st.selectbox("From Unit", ["Kilogram", "Pound", "Gram", "Ounce"])
+        unit_to = st.selectbox("To Unit", ["Kilogram", "Pound", "Gram", "Ounce"])
+
+    if st.sidebar.button("Convert Weight"):
+        result = convert_weight(weight, unit_from, unit_to)
+        if result is not None:
+            with st.expander("Conversion Results", expanded=True):
+                st.markdown(f"### Results:")
+                st.write(f"- Input Weight: **{weight} {unit_from}**")
+                st.write(f"- Converted Weight: **{result:.2f} {unit_to}**")
+        else:
+            st.error("Invalid unit combination for weight conversion!")
+
+elif menu_option == "Temperature":
+    # Temperature Conversion Interface
+    st.sidebar.subheader("Temperature Converter")
+    with st.sidebar.expander("Temperature Details", expanded=True):
+        temp = st.number_input("Enter Temperature", min_value=-273.15, step=0.1, format="%.2f")  # Avoiding below absolute zero
+        unit_from = st.selectbox("From Unit", ["Celsius", "Fahrenheit", "Kelvin"])
+        unit_to = st.selectbox("To Unit", ["Celsius", "Fahrenheit", "Kelvin"])
+
+    if st.sidebar.button("Convert Temperature"):
+        result = convert_temperature(temp, unit_from, unit_to)
+        if result is not None:
+            with st.expander("Conversion Results", expanded=True):
+                st.markdown(f"### Results:")
+                st.write(f"- Input Temperature: **{temp} {unit_from}**")
+                st.write(f"- Converted Temperature: **{result:.2f} {unit_to}**")
+        else:
+            st.error("Invalid unit combination for temperature conversion!")
