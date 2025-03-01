@@ -17,6 +17,14 @@ def convert_weight(weight, unit_from, unit_to):
         return weight * 0.035274
     elif unit_from == 'Ounce' and unit_to == 'Gram':
         return weight / 0.035274
+    elif unit_from == 'Kilogram' and unit_to == 'Gram': 
+        return weight * 1000
+    elif unit_from == 'Gram' and unit_to == 'Kilogram':  
+        return weight / 1000
+    elif unit_from == 'Kilogram' and unit_to == 'Ounce': 
+        return weight * 35.274
+    elif unit_from == 'Ounce' and unit_to == 'Kilogram':  
+        return weight / 35.274
     return None  # Return None if conversion is not possible
 
 def convert_temperature(temp, unit_from, unit_to):
