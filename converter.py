@@ -45,17 +45,14 @@ def convert_temperature(temp, unit_from, unit_to):
 # Set page configuration for the app
 st.set_page_config(page_title="Unit Converter", page_icon="💫", layout="wide")
 
-# Apply custom styling for the dark theme with attractive button and card colors
+# custom styling for the dark theme with attractive button and card colors
 st.markdown("""
     <style>
-        /* General body styling */
         body {
             background-color: #121212 !important;
             color: white !important;
             font-family: 'Roboto', sans-serif !important;
         }
-
-        /* Stylish button */
         .stButton>button {
             background: linear-gradient(145deg, #ff6a00, #ee0979) !important;
             color: white !important;
@@ -71,26 +68,21 @@ st.markdown("""
             outline: none !important;
             transform: scale(1) !important;
         }
-
-        /* Hover effect for button */
         .stButton>button:hover {
             background: linear-gradient(145deg, #ff416c, #ff4b2b) !important;
             transform: scale(1.1) !important;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
             transition: all 0.3s ease-in-out !important;
         }
-
-        /* Focused state for button */
         .stButton>button:focus {
             box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.6) !important;
         }
 
-        /* Active state for button (slightly shrunk on click) */
+        /* Active state for button */
         .stButton>button:active {
             background: linear-gradient(145deg, #ff6a00, #ee0979) !important;
             transform: scale(0.98) !important;
         }
-
         /* Stylish input fields */
         .stSelectbox, .stNumberInput, .stTextInput {
             background-color: #333333 !important;
@@ -100,30 +92,25 @@ st.markdown("""
             padding: 12px 15px !important;
             font-size: 16px !important;
         }
-
         /* Hover effect for input fields */
         .stSelectbox:hover, .stNumberInput:hover, .stTextInput:hover {
             border-color: #ee0979 !important;
         }
 
-        /* Card background and styling */
         .stCard {
             background-color: #1f1f1f !important;
             border-radius: 20px !important;
             padding: 20px 30px !important;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
         }
-
         /* Card content styling */
         .stCard h1, .stCard h2, .stCard h3 {
             color: #ff6a00 !important;
         }
-
         /* Header and subheader color */
         .stTitle, .stSubheader {
             color: #ff6a00 !important;
         }
-
         /* Improve spacing and alignment */
         .stTitle, .stSubheader, .stButton, .stCard {
             margin-bottom: 20px !important;
