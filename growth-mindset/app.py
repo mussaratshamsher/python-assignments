@@ -71,7 +71,6 @@ if uploaded_files:
     for file in uploaded_files:  
         file_ext = os.path.splitext(file.name)[-1].lower()  
 
-
         if file_ext == ".csv":  
             df = pd.read_csv(file)  
         if file_ext == ".xlsx":
