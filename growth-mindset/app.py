@@ -4,7 +4,7 @@ import os
 from io import BytesIO  
 
 # App setup  
-st.set_page_config(page_title="🎨🌱Growth Mindset Challenge", layout='wide')  
+st.set_page_config(page_title="Growth Mindset Challenge",page_icon="🎨🌱" layout='wide')  
 
 # Sidebar setup  
 st.sidebar.title("Mussarat Shamsher")  
