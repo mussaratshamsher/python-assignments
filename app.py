@@ -4,13 +4,13 @@ import os
 from io import BytesIO  
 
 # App setup  
-st.set_page_config(page_title="🚀Growth Mindset Challenge🎨🔥", layout='wide')  
+st.set_page_config(page_title="🎨🌱Growth Mindset Challenge", layout='wide')  
 
 # Sidebar setup  
 st.sidebar.title("Mussarat Shamsher")  
 resume_link = "https://milestone1-personal-static-resume.vercel.app/"  
 
-# Define Gradient Pulse Button CSS  
+# Gradient Pulse Button CSS  
 button_style = """  
     <style>  
         @keyframes pulse {  
@@ -58,7 +58,7 @@ for name, link in projects.items():
         st.sidebar.markdown(f'<meta http-equiv="refresh" content="0;URL={link}">', unsafe_allow_html=True)  
 
 # Main content  
-st.title("🚀Growth Mindset Challenge")  
+st.title("🌱🌾Growth Mindset Challenge")  
 st.write("🛠Transform your files between CSV & Excel formats with built-in data cleaning & visualization!")  
 
 # File uploader  
@@ -71,10 +71,12 @@ if uploaded_files:
     for file in uploaded_files:  
         file_ext = os.path.splitext(file.name)[-1].lower()  
 
+
         if file_ext == ".csv":  
             df = pd.read_csv(file)  
-        elif file_ext == ".xlsx":  
-            df = pd.read_excel(file)  
+        if file_ext == ".xlsx":
+            df = pd.read_excel(file, engine='openpyxl')
+ 
         else:  
             st.error(f"Unsupported file type: {file_ext}")  
             continue  
