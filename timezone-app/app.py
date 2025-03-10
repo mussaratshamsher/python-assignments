@@ -4,9 +4,7 @@ from zoneinfo import ZoneInfo
 import pytz
 from PIL import Image
 
-st.set_page_config(
-    page_title="Time Zone App", page_icon="⏰", layout="centered"
-)
+st.set_page_config(page_title="Time Zone App", page_icon="⏰", layout="centered")
 
 # Custom CSS for styling
 st.markdown(
