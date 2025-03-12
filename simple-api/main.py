@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import random
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -53,7 +54,4 @@ def get_money_quotes():
     return {"money_quote": random.choice(money_quotes)}
 
 
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+handler = Mangum(app)
