@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import random
-from mangum import Mangum
 
 app = FastAPI()
 
@@ -54,4 +53,4 @@ def get_money_quotes():
     return {"money_quote": random.choice(money_quotes)}
 
 
-handler = Mangum(app)
+
