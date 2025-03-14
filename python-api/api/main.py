@@ -41,10 +41,8 @@ money_quotes = [
  # decorator
 @app.get("/side_hustles")
 #adding authentication in api
-def get_side_hustles(apikey: str):
+def get_side_hustles():
     """Returns a random side hustle idea"""
-    if apikey != "1234":
-        return {"error": "Invalid API key"}
     return {"side_hustle": random.choice(side_hustles)}  
 
 @app.get("/money_quotes")
