@@ -52,10 +52,10 @@ def get_side_hustles():
     """Returns a random side hustle idea"""
     return {"side_hustle": random.choice(side_hustles)} 
 
-@app.get("/money_quotes")
-def get_money_quotes():
-    """Returns a random money quote"""
-    return {"money_quote": random.choice(money_quotes)}
+# @app.get("/money_quotes")
+# def get_money_quotes():
+#     """Returns a random money quote"""
+#     return {"money_quote": random.choice(money_quotes)}
 
 
 
