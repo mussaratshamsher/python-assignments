@@ -1,0 +1,86 @@
+[
+    {
+        "title": "My first book",
+        "author": "Musssarat",
+        "year": "2024",
+        "genere": "first",
+        "read": true
+    },
+    {
+        "title": "Gene AI",
+        "author": "Ali",
+        "year": "2024",
+        "genere": "2",
+        "read": true
+    },
+    {
+        "title": "Gene AI",
+        "author": "Ali",
+        "year": "2024",
+        "genere": "2",
+        "read": false
+    },
+    {
+        "title": "English",
+        "author": "Kevin",
+        "year": "2000",
+        "genere": "first",
+        "read": false
+    },
+    {
+        "title": "English",
+        "author": "Kevin",
+        "year": "2000",
+        "genere": "first",
+        "read": false
+    },
+    {
+        "title": "English",
+        "author": "Kevin",
+        "year": "2000",
+        "genere": "first",
+        "read": false
+    },
+    {
+        "title": "English",
+        "author": "Kevin",
+        "year": "2000",
+        "genere": "first",
+        "read": false
+    },
+    {
+        "title": "English",
+        "author": "Kevin",
+        "year": "2000",
+        "genere": "first",
+        "read": false
+    },
+    {
+        "title": "Hello",
+        "author": "She",
+        "year": "2000",
+        "genere": "second",
+        "read": false
+    },
+    {
+        "title": "Hello",
+        "author": "She",
+        "year": "2000",
+        "genere": "second",
+        "read": false
+    },
+    {
+        "title": "my book",
+        "author": "me",
+        "year": "now",
+        "genere": "",
+        "read": true
+    },
+    {
+        "title": "my book",
+        "author": "me",
+        "year": "now",
+        "genere": "",
+        "read": true
+    }
+]

@@ -135,9 +135,9 @@ st.markdown(
             cursor: pointer !important;
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2) !important;
         }
-        st.sidebar{
-        background: black !important;
-        color: white;
+       .stProgress {
+            background: black !important;  /* Change the background color of the progress bar */
+
         }
     </style>
     """, unsafe_allow_html=True)
@@ -220,6 +220,7 @@ elif option == "Show Reading Progress":
     progress = (completed_books / total_books * 100) if total_books > 0 else 0
     st.write(f"Total Books: {total_books}")
     st.write(f"Reading Progress: {progress:.2f}%")
+    st.progress(int(progress))  
 
 # Add Footer
 st.markdown("---")
