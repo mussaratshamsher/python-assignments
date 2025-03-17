@@ -23,7 +23,7 @@ st.markdown("""
         h1 {
     animation: fadeIn 3s ease-in-out;
    background-image: linear-gradient(to right, red, rgb(234, 250, 4),rgb(33, 188, 9));
-    --webkit-background-clip: text;
+    -webkit-background-clip: text;
     color: transparent; /* Makes the text color transparent so the gradient shows */
 }
         /* Stylish Gradient Button */
