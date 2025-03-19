@@ -4,6 +4,4 @@ import chainlit as cl
 async def main(message: cl.Message):
 
     response = f"You said: {message.content}"
-    await cl.Message(content=response).send()
-
-
+    await cl.Message(content = response).send()

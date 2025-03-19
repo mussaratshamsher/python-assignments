@@ -19,7 +19,7 @@ if st.button("Generate Money"):
 
 def fetch_side_hustle():
     try:
-       response = requests.get("http://127.0.0.1:8000/side_hustles?apikey=1234")
+       response = requests.get("https://fastapi-api.vercel.app/side_hustles")
        if response.status_code == 200:
             hustles = response.json()
             print(hustles)
@@ -37,7 +37,7 @@ st.success(idea)
 
 def fetch_money_quote():
     try:
-       response = requests.get("http://127.0.0.1:8000/money_quotes")
+       response = requests.get("https://fastapi-api.vercel.app/money_quotes")
        if response.status_code == 200:
            quotes = response.json()
            return quotes["money_quote"]
