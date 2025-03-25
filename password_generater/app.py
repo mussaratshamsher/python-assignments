@@ -7,7 +7,7 @@ st.set_page_config(page_title="Password Generator", page_icon='🔐', layout="ce
 
 # Function to generate password
 def gene_password(length, use_digits, use_special):
-    characters = string.ascii_letters  # Corrected "string.ascci_letters" to "string.ascii_letters"
+    characters = string.ascii_letters  
     if use_digits:
         characters += string.digits
     if use_special:
