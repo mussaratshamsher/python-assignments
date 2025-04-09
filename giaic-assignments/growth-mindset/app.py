@@ -35,7 +35,7 @@ button_style = """
         }  
     </style>  
 """  
-# Inject CSS into the app  
+ 
 st.sidebar.markdown(button_style, unsafe_allow_html=True)  
 
 # Create the pulse effect button  
