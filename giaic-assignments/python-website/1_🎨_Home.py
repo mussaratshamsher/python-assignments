@@ -46,6 +46,11 @@ st.markdown(
             transition: all 0.3s ease-in-out;  
             animation: pulse 1.5s infinite;  
         }  
+        .stWrite{
+         width: 90%;
+         margin: 5px auto;
+         padding: 10px;
+         overflow: hidden;}
     </style>
     """, unsafe_allow_html=True
 )
@@ -118,8 +123,15 @@ components.html("""
     }
     .swiper {
       width: 400px;
-      height: 350px;
+     height: 350px;
+      overflow: hidden;
     }
+     @media (max-width: 600px){ 
+      .swiper {
+      max-width: 200px;
+      margin: 0 auto;
+      overflow: hidden;         
+      } }         
     .swiper-slide {
       display: flex;
       align-items: center;
