@@ -57,13 +57,14 @@ for index, skill in enumerate(skills):
         # Display the skill name
         st.write(f"### {skill}")
         
+        
         # Create a progress bar for each skill
         progress_bar = st.progress(0)
         status_text = st.empty()
         
         # Simulate progress (adjust the sleep time for simulation speed)
         for i in range(1, 101):
-            time.sleep(0.03)  # Simulate the time taken to learn the skill
+            time.sleep(0.01)  # Simulate the time taken to learn the skill
             progress_bar.progress(i)  # Update the progress bar
             status_text.text(f"{skill} Progress: {i}%")  # Update text
         

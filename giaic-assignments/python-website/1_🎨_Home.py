@@ -50,7 +50,8 @@ st.markdown(
          width: 90%;
          margin: 5px auto;
          padding: 10px;
-         overflow: hidden;}
+         overflow: hidden;
+         }
     </style>
     """, unsafe_allow_html=True
 )
@@ -149,43 +150,43 @@ components.html("""
        background: url("https://images.unsplash.com/photo-1738045599472-6d931c3daccf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(2n) {
-     background: url("https://images.unsplash.com/photo-1625670413987-0ae649494c61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UXVlc3Rpb24lMjBzeW1ib2x8ZW58MHx8MHx8fDA%3D");
+     background: url("https://images.unsplash.com/photo-1625670413987-0ae649494c61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UXVlc3Rpb24lMjBzeW1ib2x8ZW58MHx8MHx8fDA%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(3n) {
-      background: url("https://plus.unsplash.com/premium_photo-1674217929972-7289cec76f27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8MzAweCUyMDMwMCUyMCUyMGNsb2NrfGVufDB8fDB8fHww");
+      background: url("https://plus.unsplash.com/premium_photo-1674217929972-7289cec76f27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8MzAweCUyMDMwMCUyMCUyMGNsb2NrfGVufDB8fDB8fHww") no-repeat center center;
     }
     .swiper-slide:nth-child(4n) {
-       background: url("https://media.istockphoto.com/id/1908249816/photo/hanging-questions.webp?a=1&b=1&s=612x612&w=0&k=20&c=i4CPowz69gYcW1Ji5_WigG1boq6pH5u2iYzXwdrPEG0=");
+       background: url("https://media.istockphoto.com/id/1908249816/photo/hanging-questions.webp?a=1&b=1&s=612x612&w=0&k=20&c=i4CPowz69gYcW1Ji5_WigG1boq6pH5u2iYzXwdrPEG0=") no-repeat center center;
     }
     .swiper-slide:nth-child(5n) {
-      background: url("https://plus.unsplash.com/premium_photo-1675329253568-447ff9cc04a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBhc3N3b3JkfGVufDB8fDB8fHww");
+      background: url("https://plus.unsplash.com/premium_photo-1675329253568-447ff9cc04a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBhc3N3b3JkfGVufDB8fDB8fHww") no-repeat center center;
     }
     .swiper-slide:nth-child(6n) {
-      background: url("https://images.unsplash.com/photo-1743105351262-3f9e6944920a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnVubnklMjBlbW98ZW58MHx8MHx8fDA%3D");
+      background: url("https://images.unsplash.com/photo-1743105351262-3f9e6944920a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnVubnklMjBlbW98ZW58MHx8MHx8fDA%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(7n) {
-      background: url("https://plus.unsplash.com/premium_photo-1679456904325-19ca215974a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vbmV5fGVufDB8fDB8fHww");
+      background: url("https://plus.unsplash.com/premium_photo-1679456904325-19ca215974a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vbmV5fGVufDB8fDB8fHww") no-repeat center center;
     }
     .swiper-slide:nth-child(8n) {
-      background: url("https://images.unsplash.com/photo-1571901020303-b93a0b0ae8d5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lcmN1cnklMjBtZXRlcnxlbnwwfHwwfHx8MA%3D%3D");
+      background: url("https://images.unsplash.com/photo-1571901020303-b93a0b0ae8d5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lcmN1cnklMjBtZXRlcnxlbnwwfHwwfHx8MA%3D%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(9n) {
-      background: url("https://plus.unsplash.com/premium_photo-1718169446625-37680c0a3a0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bnVtYmVyc3xlbnwwfHwwfHx8MA%3D%3D");
+      background: url("https://plus.unsplash.com/premium_photo-1718169446625-37680c0a3a0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bnVtYmVyc3xlbnwwfHwwfHx8MA%3D%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(10n) {
-      background: url("https://plus.unsplash.com/premium_photo-1738677617432-e3bfaad291c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9vZCUyMGFuYWx5emVyfGVufDB8fDB8fHww");
+      background: url("https://plus.unsplash.com/premium_photo-1738677617432-e3bfaad291c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9vZCUyMGFuYWx5emVyfGVufDB8fDB8fHww") no-repeat center center;
     }
     .swiper-slide:nth-child(11n) { 
-    background: url("https://images.unsplash.com/photo-1494059980473-813e73ee784b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww");
+    background: url("https://images.unsplash.com/photo-1494059980473-813e73ee784b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww") no-repeat center center; 
     }
     .swiper-slide:nth-child(12n) {
-    background: url("https://plus.unsplash.com/premium_photo-1682339496371-d71e65e3e42d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXIlMjBjb2RlfGVufDB8fDB8fHww");
+    background: url("https://plus.unsplash.com/premium_photo-1682339496371-d71e65e3e42d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXIlMjBjb2RlfGVufDB8fDB8fHww") no-repeat center center;
     }
     .swiper-slide:nth-child(13n) {
-    background: url("https://plus.unsplash.com/premium_photo-1681487746049-c39357159f69?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFzc3dvcmR8ZW58MHx8MHx8fDA%3D");
+    background: url("https://plus.unsplash.com/premium_photo-1681487746049-c39357159f69?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFzc3dvcmR8ZW58MHx8MHx8fDA%3D") no-repeat center center;
     }
     .swiper-slide:nth-child(14n) {
-    background: url("https://plus.unsplash.com/premium_photo-1679941208761-9c3835f4534b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background: url("https://plus.unsplash.com/premium_photo-1679941208761-9c3835f4534b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
     } 
   </style>
 </head>
@@ -238,7 +239,7 @@ Anagram Checker</a></div>
       autoplay: {
         delay: 1000,
         disableOnInteraction: false,
-        hoverpause: true,
+        hoverpause: true,        
       },
     });
   </script>
