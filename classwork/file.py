@@ -68,8 +68,71 @@ print(a is b)
 result = not False or False and True
 print("result", result)
 #print(“” and “hello world”) errror
-fruits = [“mango”, “banana”, “orange”]
-    
-    for fruit in fruits:
-     print(fruit, end=” ”)
-                    
+
+# def hello():
+#      for num in range(10, 0):
+#         print(f"you are in range {num}")
+# hello() 
+# fruits = ["mango"," banana", "orange"]
+# for fruit in fruits:
+#         print(fruit, end="")     
+# conditional = not [] and not ""
+# while conditional:
+#          print("inside the loop")  
+# for i in range(1, 7):
+#     if i % 2 == 0:
+#         continue
+#     if i > 4:
+#         break
+#     print(i, end="")   
+for num in range(3):
+         print(num, end="")
+else:
+     print("\n continue")            
+word = "Quiz"
+for letter in word:
+      print(letter) 
+for i in range(2, 11, 2):
+         print(i)  
+# x = 10
+# while x == 10:
+#        print("wait a second")      
+# age = 17
+# is_fasting = False
+# if age >= 18 or (age >= 16 and is_ fasting):
+#     print("Eligible, you can EAT 😁")
+# else:
+#     print("Not Eligible, Fast today")  
+# 
+# numbers = [2, 4, 6, 8]
+# for n in numbers:
+#     if n % 5 == 0:
+#         print("Divisible by 5")
+#         break
+#     else:
+#       print("No multiples of 5 found")
+x = ""
+if x or 0 or []:
+    print("Truthy")
+else:
+    print("Falsy")
+def f():
+    print("f() executed")
+    return True
+if False and f():
+    print("Inside if")
+else:
+    print("Inside else")   
+x = 10
+y = 20
+result = (x < y and x != 0) or (y < x and y != 0)
+print(result)
+i = 1
+while i < 10:
+    if i % 7 == 0:
+        break
+    i += 1
+else:
+    print("Loop finished")
+print("" and "hello world")   
+                         
