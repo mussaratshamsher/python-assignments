@@ -1,61 +1,46 @@
-from fastapi import FastAPI
-import random
 
+from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import List
+
+# Define the Product model
+class Product(BaseModel):
+    name: str
+    id: int
+    price: float
+    features: List[str]
+    availability: bool
+    details: str
+
+# Initialize the FastAPI app
 app = FastAPI()
 
-# Side_hustles API
-# Money_quotes 
+# Sample data (in a real application, this could be fetched from a database)
+products = {
+    1: Product(name="Laptop", id=1, price=999.99, features=["16GB RAM", "512GB SSD", "Intel i7"], availability=True, details="High-performance laptop for gaming and work."),
+    2: Product(name="Smartphone", id=2, price=499.99, features=["6GB RAM", "128GB Storage", "OLED Display"], availability=False, details="Affordable smartphone with great features."),
+}
 
-side_hustles = [
-    "Freelancing - Start offering your skills online!",
-    "Dropshipping - Sell without handling inventory!",
-    "Stock Market - Invest and watch your money grow!",
-    "Affiliate Marketing - Earn by promoting products!",
-    "Crypto Trading - Buy and sell digital assets!",
-    "Online Courses - Share your knowledge and earn!",
-    "Print-on-Demand - Sell custom-designed products!",
-    "Blogging - Create content and earn through ads and sponsorships!",
-    "YouTube Channel - Monetize videos through ads and sponsorships!",
-    "Social Media Management - Manage accounts for brands and influencers!",
-    "App Development - Create mobile or web applications for businesses!", 
-]
+# Endpoint to get all products
+@app.get("/products", response_model=List[Product])
+async def get_products():
+    return list(products.values())
 
-money_quotes = [
-    "The way to get started is to quit talking and begin doing. – Walt Disney",
-    "Formal education will make you a living; self-education will make you a fortune. – Jim Rohn",
-    "If you don’t find a way to make money while you sleep, you will work until you die. – Warren Buffett",
-    "Do not save what is left after spending, but spend what is left after saving. – Warren Buffett",
-    "Money is a terrible master but an excellent servant. – P.T. Barnum",
-    "You must gain control over your money or the lack of it will forever control you. – Dave Ramsey",
-    "Opportunities don’t happen. You create them. – Chris Grosser",
-    "Don’t stay in bed unless you can make money in bed. – George Burns",
-    "Money often costs too much. – Ralph Waldo Emerson",
-    "Never depend on a single income. Make an investment to create a second source. – Warren Buffett",
-    "It’s not about having lots of money. It’s about knowing how to manage it. – Anonymous",
-    "Rich people have small TVs and big libraries, and poor people have small libraries and big TVs. – Zig Ziglar",
-    "Being rich is having money; being wealthy is having time. – Margaret Bonnano",
-    "A wise person should have money in their head, but not in their heart. – Jonathan Swift",
-    "Money grows on the tree of persistence. – Japanese Proverb",
-]
+# Endpoint to get a specific product by ID
+@app.get("/products/{id}", response_model=Product)
+async def get_product(id: int):
+    if id not in products:
+        return {"error": "Product not found"}
+    return products[id]
 
- # decorator
-# @app.get("/side_hustles")
-# #adding authentication in api
-# def get_side_hustles(apikey: str):
-#     """Returns a random side hustle idea"""
-#     if apikey != "1234":
-#         return {"error": "Invalid API key"}
-#     return {"side_hustle": random.choice(side_hustles)} 
+# Endpoint to add a new product (for example, for testing purposes)
+@app.post("/products", response_model=Product)
+async def create_product(product: Product):
+    id = len(products) + 1  # Simple ID generation
+    products[id] = product
+    return product
 
-@app.get("/side_hustles")
-def get_side_hustles():
-    """Returns a random side hustle idea"""
-    return {"side_hustle": random.choice(side_hustles)} 
-
-@app.get("/money_quotes")
-def get_money_quotes():
-    """Returns a random money quote"""
-    return {"money_quote": random.choice(money_quotes)}
-
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
