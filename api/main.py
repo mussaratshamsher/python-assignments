@@ -62,7 +62,7 @@ async def create_product(product: Product):
 # Endpoint to get all Items
 @app.get("/items", response_model=List[item])
 def get_items():
-    return list(products.values())
+    return list(items.values())
 
 # Endpoint to get a specific item by ID
 @app.get("/items/{id}", response_model=item)
