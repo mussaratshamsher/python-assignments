@@ -19,6 +19,9 @@ app = FastAPI()
 products = {
     1: Product(name="Laptop", id=1, price=999.99, features=["16GB RAM", "512GB SSD", "Intel i7"], availability=True, details="High-performance laptop for gaming and work."),
     2: Product(name="Smartphone", id=2, price=499.99, features=["6GB RAM", "128GB Storage", "OLED Display"], availability=False, details="Affordable smartphone with great features."),
+    3: Product(name="Tablet", id=3, price=299.99, features=["4GB RAM", "64GB Storage", "10-inch Display"], availability=True, details="Portable tablet for reading and browsing."),
+    4: Product(name="Smartwatch", id=4, price=199.99, features=["Heart Rate Monitor", "GPS", "Water Resistant"], availability=True, details="Stylish smartwatch with fitness tracking capabilities."),
+    5: Product(name="Headphones", id=5, price=89.99, features=["Noise Cancelling", "Wireless", "20-hour Battery"], availability=True, details="Comfortable headphones with excellent sound quality.")
 }
 
 # Endpoint to get all products
