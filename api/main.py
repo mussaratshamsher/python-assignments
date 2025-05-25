@@ -32,11 +32,11 @@ products = {
     5: Product(name="Headphones", id=5, price=89.99, features=["Noise Cancelling", "Wireless", "20-hour Battery"], availability=True, details="Comfortable headphones with excellent sound quality.")
 }
 items = {
-    item(id=1, name="Lipstick", price=200, features=["Long-lasting", "Matte finish"], availability=True, details="A vibrant red lipstick perfect for any occasion."),
-    item(id=2, name="Foundation", price=300, features=["Full coverage", "Hydrating"], availability=True, details="A lightweight foundation that provides full coverage and hydration."),
-    item(id=3, name="Eyeliner", price=150, features=["Waterproof", "Precision tip"], availability=True, details="A waterproof eyeliner with a precision tip for easy application."),
-    item(id=4, name="Mascara", price=250, features=["Volumizing", "Lengthening"], availability=True, details="A volumizing mascara that lengthens and defines lashes."),
-    item(id=5, name="Blush", price=180, features=["Natural finish", "Buildable coverage"], availability=True, details="A blush that provides a natural finish and buildable coverage.")
+   1: item(id=1, name="Lipstick", price=200, features=["Long-lasting", "Matte finish"], availability=True, details="A vibrant red lipstick perfect for any occasion."),
+   2: item(id=2, name="Foundation", price=300, features=["Full coverage", "Hydrating"], availability=True, details="A lightweight foundation that provides full coverage and hydration."),
+   3: item(id=3, name="Eyeliner", price=150, features=["Waterproof", "Precision tip"], availability=True, details="A waterproof eyeliner with a precision tip for easy application."),
+   4: item(id=4, name="Mascara", price=250, features=["Volumizing", "Lengthening"], availability=True, details="A volumizing mascara that lengthens and defines lashes."),
+   5: item(id=5, name="Blush", price=180, features=["Natural finish", "Buildable coverage"], availability=True, details="A blush that provides a natural finish and buildable coverage.")
 }
 
 # Endpoint to get all products
@@ -60,12 +60,12 @@ async def create_product(product: Product):
 
 
 # Endpoint to get all Items
-@app.get("/items")
+@app.get("/items", response_model=List[item])
 def get_items():
     return list(products.values())
 
 # Endpoint to get a specific item by ID
-@app.get("/items/{id}")
+@app.get("/items/{id}", response_model=item)
 async def get_item(id: int):
     if id not in items:
         return {"error": "item not found"}
