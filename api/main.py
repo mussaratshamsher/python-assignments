@@ -71,7 +71,5 @@ async def get_item(id: int):
         return {"error": "item not found"}
     return items[id]
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
