@@ -24,17 +24,17 @@ def get_weather(location: str, unit: str = "C") -> str:
     """
     return f"The weather in {location} is 22 degrees{unit}"
 
-agent = Agent(
-    #pending
-)
+agent = Agent()
+# agent.add_tool(get_weather)
+# runner = Runner(agent=agent, model=model)
 #docorator
 @cl.oauth_callback
 def oath_callback(
     provider_id: str,
     token: str,
-    raw_user_data: Dict[str, str],  # Corrected: Added comma
-    default_user: cl.User,  # Corrected: Changed 'suer' to 'user' and capitalized User
-) -> Optional[cl.User]:  # Corrected: Capitalized User
+    raw_user_data: Dict[str, str],  
+    default_user: cl.User,  
+) -> Optional[cl.User]: 
     """
     Handle the OAuth callback from the provider
     """
@@ -47,7 +47,7 @@ def oath_callback(
 async def handle_chat_start():
     cl.user_session.set("history", [])
 
-    await cl.Message(content="Hell! How can I help you today?").send()
+    await cl.Message(content="Hello! How can I help you today?").send()
 
 @cl.on_message
 async def handel_message(message: cl.Message):

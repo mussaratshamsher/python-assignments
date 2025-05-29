@@ -51,14 +51,6 @@ async def get_product(id: int):
         return {"error": "Product not found"}
     return products[id]
 
-# Endpoint to add a new product (for example, for testing purposes)
-@app.post("/products", response_model=Product)
-async def create_product(product: Product):
-    id = len(products) + 1  # Simple ID generation
-    products[id] = product
-    return product
-
-
 # Endpoint to get all Items
 @app.get("/items", response_model=List[item])
 def get_items():
