@@ -25,8 +25,8 @@ def get_weather(location: str, unit: str = "C") -> str:
     return f"The weather in {location} is 22 degrees{unit}"
 
 agent = Agent()
-# agent.add_tool(get_weather)
-# runner = Runner(agent=agent, model=model)
+agent.add_tool(get_weather)
+runner = Runner(agent=agent, model=model)
 #docorator
 @cl.oauth_callback
 def oath_callback(
